@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hotel Khoai - Authentic Bengali dining near Shantiniketan. Experience flavorful Bengali cuisine, warm hospitality, and relaxing dining. Open 24 hours.">
+<meta name="keywords" content="restaurant near Shantiniketan, Bengali food near Shantiniketan, family restaurant Bolpur, restaurant in Bolpur, Hotel Khoai">
+<title>Hotel Khoai | Authentic Bengali Dining Near Shantiniketan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #8B3A2E;
+    --terracotta-dark: #6B2C22;
+    --terracotta-light: #A84E40;
+    --cream: #F5EFE6;
+    --gold: #C89B3C;
+    --gold-light: #D4AE60;
+    --charcoal: #2B2B2B;
+    --offwhite: #FAFAFA;
+    --muted: #7A7468;
+    --border: rgba(139,58,46,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--offwhite);
+    color: var(--charcoal);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background: rgba(250,250,250,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(139,58,46,0.10); }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; height: 68px;
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; line-height: 1;
+  }
+  .nav-logo span:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem; font-weight: 600; color: var(--terracotta);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span:last-child {
+    font-size: 0.62rem; font-weight: 400; color: var(--gold);
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none; font-size: 0.85rem; font-weight: 500;
+    color: var(--charcoal); letter-spacing: 0.06em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta); color: #fff;
+    border: none; padding: 10px 22px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--terracotta-dark); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0c09 0%, #2d1410 40%, #3d1d18 70%, #1a0c09 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding-top: 68px;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(139,58,46,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 20% 70%, rgba(200,155,60,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid-overlay {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  /* Decorative food circles */
+  .hero-circle {
+    position: absolute; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,58,46,0.25), transparent 70%);
+    pointer-events: none;
+  }
+  .hero-circle-1 { width: 500px; height: 500px; top: -100px; right: -80px; }
+  .hero-circle-2 { width: 300px; height: 300px; bottom: 60px; left: -60px; background: radial-gradient(circle, rgba(200,155,60,0.15), transparent 70%); }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 760px; text-align: center; padding: 40px 24px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,155,60,0.15); border: 1px solid rgba(200,155,60,0.35);
+    border-radius: 100px; padding: 6px 18px;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold-light);
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge::before { content: ''; display: block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    font-weight: 600; line-height: 1.1;
+    color: #fff; letter-spacing: -0.01em;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem); font-weight: 300;
+    color: rgba(245,239,230,0.75); line-height: 1.75;
+    max-width: 580px; margin: 0 auto 36px;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.45s ease both; margin-bottom: 48px;
+  }
+  .btn-primary {
+    background: var(--gold); color: var(--charcoal);
+    border: none; padding: 15px 34px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,155,60,0.35); }
+  .btn-outline {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,0.4); padding: 15px 34px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+  .hero-info-bar {
+    display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+  .hero-info-item {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(245,239,230,0.7); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.05em;
+  }
+  .hero-info-item .icon { font-size: 1rem; }
+
+  /* Scroll arrow */
+  .scroll-arrow {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    opacity: 0.5; animation: bounce 2s infinite;
+  }
+  .scroll-arrow span { display: block; width: 1px; height: 40px; background: rgba(255,255,255,0.4); }
+  .scroll-arrow::after { content: '▾'; color: #fff; font-size: 0.8rem; }
+
+  /* ── SECTIONS BASE ── */
+  section { padding: 90px 24px; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 14px; display: block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 600; line-height: 1.2; color: var(--charcoal);
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+  .section-divider {
+    width: 48px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 22px 0 14px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-text p {
+    font-size: 1.05rem; line-height: 1.85; color: #4a4540; font-weight: 300;
+    margin-top: 20px;
+  }
+  .about-text p + p { margin-top: 16px; }
+  .about-stats {
+    display: flex; gap: 40px; margin-top: 36px; flex-wrap: wrap;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+    font-weight: 600; color: var(--terracotta); line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-frame {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #8B3A2E 0%, #2d1410 100%);
+    border-radius: 4px; overflow: hidden; position: relative;
+  }
+  .about-img-frame::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80') center/cover;
+    mix-blend-mode: luminosity; opacity: 0.35;
+  }
+  .about-img-frame .inner-content {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px;
+  }
+  .about-img-frame .quote-block {
+    text-align: center; color: rgba(245,239,230,0.9);
+  }
+  .about-img-frame .quote-mark {
+    font-family: 'Cormorant Garamond', serif; font-size: 8rem;
+    line-height: 0.5; color: var(--gold); opacity: 0.4; display: block;
+  }
+  .about-img-frame .quote-text {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+    font-style: italic; font-weight: 400; line-height: 1.5;
+    margin-top: 20px;
+  }
+  .about-badge-float {
+    position: absolute; bottom: -20px; left: -20px;
+    background: var(--gold); border-radius: 3px;
+    padding: 18px 22px; min-width: 130px; text-align: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .about-badge-float .num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: #1a0c09; line-height: 1; }
+  .about-badge-float .lbl { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(26,12,9,0.7); margin-top: 4px; }
+
+  /* ── MENU ── */
+  #menu { background: var(--offwhite); }
+  .menu-header { text-align: center; margin-bottom: 56px; }
+  .menu-header .section-divider { margin: 22px auto; }
+  .menu-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .menu-card {
+    background: #fff; border-radius: 3px; overflow: hidden;
+    border: 1px solid var(--border); transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .menu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(139,58,46,0.12); }
+  .menu-card-img {
+    height: 200px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #2d1410, #8B3A2E);
+  }
+  .menu-card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s; display: block;
+  }
+  .menu-card:hover .menu-card-img img { transform: scale(1.06); }
+  .menu-card-img .overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(26,12,9,0.6) 0%, transparent 60%);
+  }
+  .menu-card-body { padding: 22px 22px 24px; }
+  .menu-card-body h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
+    font-weight: 600; color: var(--charcoal); margin-bottom: 8px;
+  }
+  .menu-card-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+  .menu-veg-dot {
+    display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .veg { background: #2e7d32; }
+  .nonveg { background: #c62828; }
+  .menu-tag {
+    display: inline-block; font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--cream); color: var(--terracotta);
+    border: 1px solid rgba(139,58,46,0.2); border-radius: 100px;
+    padding: 3px 10px; margin-bottom: 10px;
+  }
+  .menu-cta {
+    text-align: center; margin-top: 52px;
+  }
+  .btn-terracotta {
+    background: var(--terracotta); color: #fff;
+    border: none; padding: 15px 38px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  .btn-terracotta:hover { background: var(--terracotta-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(139,58,46,0.3); }
+
+  /* ── WHY CHOOSE ── */
+  #why { background: linear-gradient(160deg, #1a0c09, #2d1410 60%, #1a0c09); color: #fff; }
+  #why .section-title { color: var(--cream); }
+  .why-header { text-align: center; margin-bottom: 60px; }
+  .why-header .section-divider { margin: 22px auto; background: linear-gradient(90deg, var(--gold), transparent); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06);
+  }
+  .why-card {
+    padding: 40px 32px; background: rgba(26,12,9,0.5);
+    transition: background 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .why-card:hover { background: rgba(139,58,46,0.2); }
+  .why-icon { font-size: 2.2rem; margin-bottom: 18px; display: block; }
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-weight: 600; color: var(--gold-light); margin-bottom: 10px;
+  }
+  .why-card p { font-size: 0.9rem; color: rgba(245,239,230,0.65); line-height: 1.7; font-weight: 300; }
+
+  /* ── AMBIENCE ── */
+  #ambience { background: var(--cream); }
+  .ambience-header { text-align: center; margin-bottom: 50px; }
+  .ambience-header .section-divider { margin: 22px auto; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 12px;
+  }
+  .gallery-item {
+    overflow: hidden; border-radius: 3px; position: relative;
+    background: linear-gradient(135deg, #2d1410, #8B3A2E);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s; display: block;
+  }
+  .gallery-item:hover img { transform: scale(1.07); }
+  .gallery-item-1 { grid-column: 1/6; grid-row: 1/2; }
+  .gallery-item-2 { grid-column: 6/9; grid-row: 1/2; }
+  .gallery-item-3 { grid-column: 9/13; grid-row: 1/3; }
+  .gallery-item-4 { grid-column: 1/4; grid-row: 2/3; }
+  .gallery-item-5 { grid-column: 4/9; grid-row: 2/3; }
+  .gallery-caption {
+    text-align: center; margin-top: 32px;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+    font-style: italic; color: var(--muted);
+  }
+
+  /* ── REVIEWS ── */
+  #reviews { background: var(--offwhite); }
+  .reviews-header { text-align: center; margin-bottom: 56px; }
+  .reviews-header .section-divider { margin: 22px auto; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .review-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 3px;
+    padding: 32px 28px; position: relative; transition: box-shadow 0.3s;
+  }
+  .review-card:hover { box-shadow: 0 12px 36px rgba(139,58,46,0.1); }
+  .review-card::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif; font-size: 6rem;
+    color: var(--terracotta); opacity: 0.08; line-height: 0;
+    position: absolute; top: 40px; right: 28px;
+  }
+  .review-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
+  .review-text { font-size: 0.95rem; line-height: 1.8; color: #4a4540; font-weight: 300; font-style: italic; }
+  .review-author {
+    display: flex; align-items: center; gap: 12px; margin-top: 24px;
+    padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  .review-avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--cream); display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600;
+    color: var(--terracotta); border: 1px solid rgba(139,58,46,0.2);
+  }
+  .review-name { font-size: 0.85rem; font-weight: 600; color: var(--charcoal); }
+  .review-label { font-size: 0.72rem; color: var(--muted); }
+  .rating-badge {
+    display: flex; align-items: center; gap: 16px; justify-content: center;
+    margin-top: 52px; padding: 28px 40px;
+    background: var(--cream); border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+  .rating-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 3.5rem;
+    font-weight: 700; color: var(--terracotta); line-height: 1;
+  }
+  .rating-info { text-align: left; }
+  .rating-info .stars { color: var(--gold); font-size: 1.2rem; }
+  .rating-info .lbl { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 4px; }
+
+  /* ── LOCATION ── */
+  #location { background: var(--cream); }
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .location-info .address-block {
+    margin-top: 24px; padding: 30px;
+    background: #fff; border: 1px solid var(--border); border-radius: 3px;
+  }
+  .address-line {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .address-line:last-child { border-bottom: none; padding-bottom: 0; }
+  .address-line .icon { font-size: 1.1rem; min-width: 24px; }
+  .address-line .content { }
+  .address-line .label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .address-line .value { font-size: 0.95rem; color: var(--charcoal); line-height: 1.55; }
+  .address-line .value a { color: var(--terracotta); text-decoration: none; font-weight: 500; }
+  .location-btns { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+  .map-frame {
+    background: linear-gradient(135deg, #1a0c09, #2d1410);
+    border-radius: 4px; overflow: hidden; height: 100%; min-height: 400px;
+    position: relative;
+  }
+  .map-frame iframe {
+    width: 100%; height: 100%; min-height: 400px; border: none;
+    display: block;
+  }
+
+  /* ── CTA BAND ── */
+  #cta {
+    background: var(--terracotta); padding: 80px 24px; text-align: center;
+  }
+  #cta .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 600;
+    color: #fff; line-height: 1.15; margin-bottom: 16px;
+  }
+  #cta .cta-title em { font-style: italic; color: var(--gold-light); }
+  #cta .cta-sub {
+    color: rgba(245,239,230,0.8); font-size: 1.05rem; font-weight: 300;
+    max-width: 520px; margin: 0 auto 36px; line-height: 1.7;
+  }
+  #cta .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+  #cta .btn-white {
+    background: #fff; color: var(--terracotta);
+    border: none; padding: 15px 34px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  #cta .btn-white:hover { background: var(--cream); }
+  #cta .btn-outline-white {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,0.5); padding: 15px 34px; border-radius: 2px;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    text-decoration: none; transition: all 0.25s; display: inline-block;
+  }
+  #cta .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+  #cta .cta-meta {
+    display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+    color: rgba(245,239,230,0.75); font-size: 0.85rem;
+  }
+  #cta .cta-meta span::before { margin-right: 6px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a0c09; color: rgba(245,239,230,0.7);
+    padding: 60px 24px 30px;
+  }
+  .footer-inner {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px;
+    padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand .logo-name {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
+    font-weight: 600; color: var(--cream); margin-bottom: 6px;
+  }
+  .footer-brand .logo-tag {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+  }
+  .footer-brand p { font-size: 0.88rem; line-height: 1.8; font-weight: 300; max-width: 300px; }
+  .footer-col h4 {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(245,239,230,0.65); text-decoration: none; font-size: 0.9rem;
+    font-weight: 300; transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-col .contact-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; }
+  .footer-col .contact-item .icon { min-width: 18px; }
+  .footer-col .contact-item span { font-size: 0.88rem; font-weight: 300; line-height: 1.5; }
+  .footer-bottom {
+    max-width: 1140px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 28px; flex-wrap: wrap; gap: 12px;
+  }
+  .footer-bottom .tagline { font-size: 0.82rem; font-weight: 300; font-style: italic; color: rgba(245,239,230,0.45); }
+  .footer-bottom .copy { font-size: 0.75rem; color: rgba(245,239,230,0.3); }
+
+  /* ── FLOATING CALL BTN ── */
+  .float-call {
+    display: none;
+    position: fixed; bottom: 24px; right: 24px; z-index: 999;
+    background: var(--terracotta); color: #fff;
+    width: 56px; height: 56px; border-radius: 50%;
+    align-items: center; justify-content: center;
+    font-size: 1.4rem; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(139,58,46,0.45);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .float-call:hover { transform: scale(1.08); box-shadow: 0 10px 28px rgba(139,58,46,0.55); }
+  .float-call .pulse {
+    position: absolute; inset: 0; border-radius: 50%;
+    background: var(--terracotta); animation: pulse 2s infinite;
+  }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav {
+    display: none; position: fixed; top: 68px; left: 0; width: 100%;
+    background: rgba(250,250,250,0.98); backdrop-filter: blur(12px);
+    padding: 20px 24px 28px; z-index: 999;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column; gap: 4px;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    text-decoration: none; color: var(--charcoal); font-size: 1rem;
+    font-weight: 500; letter-spacing: 0.05em; padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-nav a:last-child { border-bottom: none; }
+  .mobile-nav .mob-cta {
+    background: var(--terracotta); color: #fff;
+    text-align: center; border-radius: 2px; padding: 13px;
+    margin-top: 8px; font-weight: 600; border-bottom: none;
+    letter-spacing: 0.1em; font-size: 0.85rem; text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    70% { transform: scale(1.5); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-visual { order: -1; max-width: 440px; margin: 0 auto; }
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: 1fr 1fr; }
+    .location-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: 1/-1; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 70px 20px; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item-1 { grid-column: 1/2; grid-row: auto; }
+    .gallery-item-2 { grid-column: 2/3; grid-row: auto; }
+    .gallery-item-3 { grid-column: 1/-1; grid-row: auto; height: 220px; }
+    .gallery-item-4 { grid-column: 1/2; grid-row: auto; }
+    .gallery-item-5 { grid-column: 2/3; grid-row: auto; }
+    .footer-inner { grid-template-columns: 1fr; gap: 36px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .float-call { display: flex; }
+    .hero-info-bar { gap: 20px; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-outline { width: 260px; text-align: center; }
+    .rating-badge { flex-direction: column; gap: 8px; text-align: center; }
+    .rating-info { text-align: center; }
+    .about-badge-float { left: 0; bottom: -20px; }
+    .location-btns { flex-direction: column; }
+    .location-btns a { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span>Hotel Khoai</span>
+      <span>Shantiniketan, West Bengal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#location">Find Us</a></li>
+    </ul>
+    <a href="tel:+919732269939" class="nav-cta">📞 Call Now</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#menu" onclick="closeMenu()">Menu</a>
+  <a href="#why" onclick="closeMenu()">Why Us</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#location" onclick="closeMenu()">Find Us</a>
+  <a href="tel:+919732269939" class="mob-cta">📞 Call: +91 97322 69939</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Bengali &amp; Indian Cuisine</div>
+    <h1 class="hero-title">
+      Authentic Bengali Dining<br>
+      Near <em>Shantiniketan</em>
+    </h1>
+    <p class="hero-subtitle">
+      Experience flavorful Bengali cuisine, warm hospitality, and a relaxing dining atmosphere at Hotel Khoai — a favorite stop for families, travelers, and food lovers.
+    </p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">View Menu</a>
+      <a href="tel:+919732269939" class="btn-outline">📞 Call Now</a>
+    </div>
+    <div class="hero-info-bar">
+      <div class="hero-info-item"><span class="icon">⭐</span> 4.2 / 5 Rating</div>
+      <div class="hero-info-item"><span class="icon">📍</span> Near Shantiniketan Bolpur Road</div>
+      <div class="hero-info-item"><span class="icon">🕒</span> Open 24 Hours</div>
+    </div>
+  </div>
+  <div class="scroll-arrow"><span></span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">A Local Favorite for <em>Authentic Flavors</em></h2>
+        <div class="section-divider"></div>
+        <p>Hotel Khoai is a beloved restaurant near Shantiniketan, known for serving authentic Bengali and Indian dishes in a welcoming and comfortable environment.</p>
+        <p>Whether you're exploring the scenic Khoai area, visiting Shantiniketan, or simply looking for a satisfying meal with family and friends, Hotel Khoai offers the perfect place to relax and enjoy great food.</p>
+        <p>Guests love our flavorful dishes, generous portions, and friendly service. With both outdoor seating and air-conditioned indoor dining, we provide a comfortable experience for every guest.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">4.2</div>
+            <div class="stat-label">Google Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24H</div>
+            <div class="stat-label">Always Open</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">2+</div>
+            <div class="stat-label">Seating Options</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-img-frame">
+          <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80') center/cover;opacity:0.28;"></div>
+          <div class="inner-content">
+            <div class="quote-block">
+              <span class="quote-mark">"</span>
+              <p class="quote-text">Food made with love, served with warmth — the true spirit of Bengali hospitality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <div class="num">⭐</div>
+          <div class="lbl">Loved by<br>Travelers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="container">
+    <div class="menu-header reveal">
+      <span class="section-eyebrow">What We Serve</span>
+      <h2 class="section-title">Our <em>Popular</em> Dishes</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto;font-size:0.95rem;line-height:1.75;font-weight:300;">
+        From hearty thalis to rich curries, every dish at Hotel Khoai is prepared with authentic recipes and fresh ingredients.
+      </p>
+    </div>
+    <div class="menu-grid reveal">
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80" alt="Veg Thali" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot veg"></span>Vegetarian</span>
+          <h3>Veg Thali</h3>
+          <p>Complete traditional meal with rice, dal, vegetables, and sides — a wholesome Bengali experience.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&q=80" alt="Basanti Pulao with Kosha Mangsho" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot nonveg"></span>Non-Veg</span>
+          <h3>Basanti Pulao & Kosha Mangsho</h3>
+          <p>Classic Bengali festive rice served with rich, slow-cooked mutton curry — a true celebration dish.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" alt="Chicken Curry" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot nonveg"></span>Non-Veg</span>
+          <h3>Chicken Curry</h3>
+          <p>Flavorful traditional chicken curry made with aromatic spices — a crowd-pleasing favorite.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&q=80" alt="Chicken Kasha" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot nonveg"></span>Non-Veg</span>
+          <h3>Chicken Kasha</h3>
+          <p>Slow-cooked thick chicken curry packed with bold flavors and rich spice blend.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=400&q=80" alt="Crispy Chicken" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot nonveg"></span>Non-Veg</span>
+          <h3>Crispy Chicken</h3>
+          <p>Golden crispy fried chicken snack — a must-try for every visitor to Hotel Khoai.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1641819460822-ece49a36c04a?w=400&q=80" alt="Alu Paratha" loading="lazy">
+          <div class="overlay"></div>
+        </div>
+        <div class="menu-card-body">
+          <span class="menu-tag"><span class="menu-veg-dot veg"></span>Vegetarian</span>
+          <h3>Alu Paratha</h3>
+          <p>Freshly prepared stuffed flatbread served hot — perfect with pickle or yoghurt on the side.</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="menu-cta reveal">
+      <a href="tel:+919732269939" class="btn-terracotta">📞 Call to Order or Visit Us Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="container">
+    <div class="why-header reveal">
+      <span class="section-eyebrow" style="color:var(--gold)">Why Choose Us</span>
+      <h2 class="section-title">Why People <em style="color:var(--gold-light)">Love</em> Hotel Khoai</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="why-icon">🍛</span>
+        <h3>Authentic Bengali Taste</h3>
+        <p>Traditional recipes passed down and made with care — every dish carries the real flavor of Bengal.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🏡</span>
+        <h3>Comfortable Dining</h3>
+        <p>Choose between breezy outdoor seating or cool air-conditioned indoors — comfort for every season.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">👨‍👩‍👧‍👦</span>
+        <h3>Family Friendly</h3>
+        <p>Welcoming atmosphere perfect for families, groups, and all ages — a true home away from home.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🕒</span>
+        <h3>Open 24 Hours</h3>
+        <p>Hunger doesn't follow a schedule — neither do we. Enjoy great food anytime, day or night.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📍</span>
+        <h3>Great Location</h3>
+        <p>Conveniently located near Shantiniketan Bolpur Road — a perfect stop for every traveler passing through.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🤝</span>
+        <h3>Friendly Service</h3>
+        <p>Warm Bengali hospitality from our staff ensures every guest feels welcome and well taken care of.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENCE -->
+<section id="ambience">
+  <div class="container">
+    <div class="ambience-header reveal">
+      <span class="section-eyebrow">Our Ambience</span>
+      <h2 class="section-title">A Space to <em>Relax</em> &amp; Dine</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item gallery-item-1">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75" alt="Restaurant ambience" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-2">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=75" alt="Outdoor seating" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-3">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75" alt="Food presentation" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-4">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=75" alt="Family dining" loading="lazy">
+      </div>
+      <div class="gallery-item gallery-item-5">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=75" alt="Indoor dining" loading="lazy">
+      </div>
+    </div>
+    <p class="gallery-caption reveal">
+      "A comfortable space to enjoy delicious food and memorable moments."
+    </p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <span class="section-eyebrow">Guest Voices</span>
+      <h2 class="section-title">What Our <em>Guests</em> Say</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Family restaurant with tasty food and excellent service. The Basanti Pulao was absolutely divine — will definitely visit again!"</p>
+        <div class="review-author">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Rajesh M.</div>
+            <div class="review-label">Traveler from Kolkata</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Well maintained place with good food options and comfortable seating. Perfect atmosphere — both the outdoor and AC sections are lovely."</p>
+        <div class="review-author">
+          <div class="review-avatar">P</div>
+          <div>
+            <div class="review-name">Priya S.</div>
+            <div class="review-label">Shantiniketan Visitor</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★</div>
+        <p class="review-text">"Great food and generous portions. The Chicken Kasha was rich and flavorful. A perfect stop near Shantiniketan for a hearty meal."</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Arnab D.</div>
+            <div class="review-label">Road Traveler</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rating-badge reveal">
+      <div class="rating-num">4.2</div>
+      <div class="rating-info">
+        <div class="stars">★★★★☆</div>
+        <div class="lbl">Based on Google Reviews</div>
+        <div style="margin-top:6px;font-size:0.82rem;color:var(--muted);">Loved by families, travelers &amp; food enthusiasts</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="container">
+    <div style="margin-bottom:48px;" class="reveal">
+      <span class="section-eyebrow">Find Us</span>
+      <h2 class="section-title">Visit Us <em>Today</em></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="location-grid">
+      <div class="location-info reveal">
+        <div class="address-block">
+          <div class="address-line">
+            <span class="icon">📍</span>
+            <div class="content">
+              <div class="label">Address</div>
+              <div class="value">Hotel Khoai<br>Orgram Jora Canal Bridge<br>Shantiniketan Bolpur Road<br>Orgram, Bardhaman<br>West Bengal 713128, India</div>
+            </div>
+          </div>
+          <div class="address-line">
+            <span class="icon">📞</span>
+            <div class="content">
+              <div class="label">Phone</div>
+              <div class="value"><a href="tel:+919732269939">+91 97322 69939</a></div>
+            </div>
+          </div>
+          <div class="address-line">
+            <span class="icon">🕒</span>
+            <div class="content">
+              <div class="label">Hours</div>
+              <div class="value">Open 24 Hours, 7 Days a Week</div>
+            </div>
+          </div>
+          <div class="address-line">
+            <span class="icon">🅿️</span>
+            <div class="content">
+              <div class="label">Parking</div>
+              <div class="value">Parking available nearby</div>
+            </div>
+          </div>
+        </div>
+        <div class="location-btns">
+          <a href="https://maps.google.com/?q=Hotel+Khoai+Orgram+Jora+Canal+Bridge+Shantiniketan" target="_blank" class="btn-terracotta">📍 Get Directions</a>
+          <a href="tel:+919732269939" class="btn-outline" style="color:var(--terracotta);border-color:var(--terracotta);padding:15px 28px;border-radius:2px;font-family:Jost,sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-block;border:1px solid var(--terracotta);background:transparent;">📞 Call Now</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.8!2d87.65!3d23.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHotel+Khoai+Shantiniketan!5e0!3m2!1sen!2sin!4v1"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Hotel Khoai Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="cta">
+  <div class="container">
+    <h2 class="cta-title">Hungry? Visit <em>Hotel Khoai</em> Today</h2>
+    <p class="cta-sub">Enjoy authentic Bengali cuisine in a warm and welcoming atmosphere. Open 24 hours for your convenience.</p>
+    <div class="cta-btns">
+      <a href="tel:+919732269939" class="btn-white">📞 Call Now</a>
+      <a href="https://maps.google.com/?q=Hotel+Khoai+Orgram+Jora+Canal+Bridge+Shantiniketan" target="_blank" class="btn-outline-white">📍 Get Directions</a>
+    </div>
+    <div class="cta-meta">
+      <span>📞 +91 97322 69939</span>
+      <span>🕒 Open 24 Hours</span>
+      <span>⭐ 4.2 / 5 Rating</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo-name">Hotel Khoai</div>
+      <div class="logo-tag">Shantiniketan · West Bengal</div>
+      <p>Authentic Bengali flavors, warm hospitality, and a comfortable dining experience near Shantiniketan — open for you 24 hours a day.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Our Menu</a></li>
+        <li><a href="#why">Why Choose Us</a></li>
+        <li><a href="#reviews">Guest Reviews</a></li>
+        <li><a href="#location">Location & Directions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="contact-item">
+        <span class="icon">📞</span>
+        <span><a href="tel:+919732269939" style="color:rgba(245,239,230,0.65);text-decoration:none;">+91 97322 69939</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">📍</span>
+        <span>Orgram Jora Canal Bridge, Bolpur Road, Orgram, Bardhaman 713128</span>
+      </div>
+      <div class="contact-item">
+        <span class="icon">🕒</span>
+        <span>Open 24 Hours</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="tagline">"Authentic Bengali Flavors Near Shantiniketan."</p>
+    <p class="copy">© 2025 Hotel Khoai. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Floating Call Button (mobile) -->
+<a href="tel:+919732269939" class="float-call" aria-label="Call Now">
+  <div class="pulse"></div>
+  <span style="position:relative;z-index:1;font-size:1.3rem;">📞</span>
+</a>
+
+<script>
+  // Sticky nav
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger menu cards
+  document.querySelectorAll('.menu-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.07}s`;
+  });
+</script>
+</body>
+</html>
